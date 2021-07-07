@@ -21,11 +21,10 @@ export const ProjectListScreen=()=>{
         })
     },[param])
     
-    useEffect(()=>{  
+    useEffect(()=>{   
         fetch(`${apiUrl}/users`).then(async response=>{
             if(response.ok){
-                console.log(users)
-                setUsers(await response.json())
+                setList(await response.json())
             }
         })
     },[])
