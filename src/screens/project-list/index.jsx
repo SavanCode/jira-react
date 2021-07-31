@@ -16,7 +16,8 @@ export const ProjectListScreen=()=>{
     useEffect(()=>{   
         fetch(`${apiUrl}/projects`).then(async response=>{
             if(response.ok){
-                setList(await response.json())
+                const jsonData = await response.json();
+                setList(jsonData)
             }
         })
     },[param])
@@ -24,7 +25,9 @@ export const ProjectListScreen=()=>{
     useEffect(()=>{   
         fetch(`${apiUrl}/users`).then(async response=>{
             if(response.ok){
-                setList(await response.json())
+                const jsonData = await response.json();
+                setUsers(jsonData)
+                //console.log("users",users)
             }
         })
     },[])
